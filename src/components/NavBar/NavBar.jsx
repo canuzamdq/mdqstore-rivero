@@ -1,21 +1,24 @@
-import "../NavBar/style.css"
-import CartWidget from "../CartWidget/CartWidget"
-import logo from "../NavBar/mdqstore-logo.png"
-
+import { Link, NavLink } from "react-router-dom";
+import "../NavBar/styleNavBar.css";
+import CartWidget from "../CartWidget/CartWidget";
 
 export default function NavBar () {
     return (
         <nav>
             <div className="navBar">
-                <a href="#"><img src={ logo } /></a> 
-                <CartWidget /> 
+                <Link to="/" className = "aNavBar">
+                    <h1 className="h1NavBar">MDQ STORE</h1>
+                </Link> 
+                <div className="cart">
+                    <CartWidget />
+                </div>
             </div>
                 <div className="list">
                     <ul>
-                        <li><a href="#">Celulares</a></li>
-                        <li><a href="#">Tablets</a></li>
-                        <li><a href="#">TV y Smart</a></li>
-                        <li><a href="#">Accesorios</a></li>
+                        <li><Link to="/category/celulares">Celulares</Link></li>
+                        <li><Link to="/category/tablet">Tablets</Link></li>
+                        <li><Link to="/category/televisores">TV y Smart</Link></li>
+                        <li><Link to="/category/accesorios">Accesorios</Link></li>
                     </ul>
                 </div>    
         </nav>

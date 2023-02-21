@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+.itemCountContainer {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  
+    
+}
+
+.itemCount {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-weight: 400;
+  
+}
+
+.btnCounter {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    
+    
+
+}
+
+
+.count {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+   
+    
+}
+
+.productStock {
+    width: 300px;
+    height: 40px;
+    display: flex;  
+    justify-content: left;
+}
+
+.btnAddToCart {
+    font-family: Roboto-Regular,sans-serif;
+    width: 180px;
+    height: 40px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255,46,99,1);
+    color: white;
+    font-size: 15px;
+}
+
+    .btnAddToCart:hover {
+        font-family: Roboto-Regular,sans-serif;
+        font-size: 15px;
+        background: linear-gradient(90deg, rgba(255,46,99,1) 23%, rgba(233,148,170,1) 100%);
+        cursor: pointer;
+    }
