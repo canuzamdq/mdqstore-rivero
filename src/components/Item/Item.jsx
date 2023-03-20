@@ -6,7 +6,7 @@ export default function Item( {stock} ) {
 
         <div className="itemCard"> 
             <div className="imageCard">
-                <img src={stock.img} alt={stock.nombre} width="200px" />
+                <img src= {`/images/${stock.img}`} alt={stock.name} width="200px" />
             </div>
             <div className="contentCard">
                 <div className="priceCard">{"$ " + stock.price}</div>

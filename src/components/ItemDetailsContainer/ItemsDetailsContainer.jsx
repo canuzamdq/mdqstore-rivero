@@ -1,28 +1,29 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { product } from "../../data/products";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const ItemsDetailsContainer = () => {
 
 const { id } = useParams() /*id viene del objeto useParams "desestructurado" */
 const [detailObjet, setDetailObjet] = useState({})
 
-const getProduct = new Promise((resolve, reject) => {
-    setTimeout(()=> {
-        const productFind = product.find (item => item.id == id)
-        resolve(productFind)
-    }, 0)
-})
+
+const getProducts = () => {
+    const db = getFirestore();
+    const querySnapshot = doc(db, "products", id);
+
+    getDoc(querySnapshot)
+        .then((res) => {
+            setDetailObjet({
+                id: res.id, ...res.data()
+            })
+        })
+        .catch((error) => console.log(error))
+}
 
 useEffect (()=>{
-    getProduct
-    .then(response => { 
-        setDetailObjet(response)
-    })
-    .catch( (error) => {
-        console.log(error)
-    })
+    getProducts()
     
 }, [])
 

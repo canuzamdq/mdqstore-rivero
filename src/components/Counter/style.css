@@ -62,3 +62,10 @@
         background: linear-gradient(90deg, rgba(255,46,99,1) 23%, rgba(233,148,170,1) 100%);
         cursor: pointer;
     }
+
+    .btnAddToCart:disabled {
+        font-family: Roboto-Regular,sans-serif;
+        font-size: 15px;
+        background: lightgrey;
+        
+    }

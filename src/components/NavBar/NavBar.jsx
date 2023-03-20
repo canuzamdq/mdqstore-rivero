@@ -1,8 +1,10 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../NavBar/styleNavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
 
+
 export default function NavBar () {
+    
     return (
         <nav>
             <div className="navBar">
@@ -15,6 +17,7 @@ export default function NavBar () {
             </div>
                 <div className="list">
                     <ul>
+                        <li><Link to="/">Todos los productos</Link></li>
                         <li><Link to="/category/celulares">Celulares</Link></li>
                         <li><Link to="/category/tablet">Tablets</Link></li>
                         <li><Link to="/category/televisores">TV y Smart</Link></li>

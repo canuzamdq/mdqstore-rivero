@@ -56,6 +56,13 @@
             
         }
 
+        .list a:focus {
+            border-bottom: 2px solid #ff2e63;
+            font-weight: 350;
+            
+        }
+
+
 .cart {
     padding-right: 30px;
 }
