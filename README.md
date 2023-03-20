@@ -17,7 +17,7 @@ Características:
 
 # GIF del sitio
 
-![](./demo.gif){width = "150px"}
+![](./demo.gif)
 
 # Getting Started with Create React App
 

@@ -17,12 +17,13 @@ const Cart = () => {
     
 
   const createOrder = (event) => {
-    const db = getFirestore()
     event.preventDefault()
+    if (!formValue.name || !formValue.phone || !formValue.email){
+      swal({text:"Debe completar todos los campos", icon: "warning"})
+    }else {
+    const db = getFirestore()
     const querySnapshot = collection(db, "orders")
-    
-
-  
+      
     addDoc(querySnapshot, {
       buyer: {
         email: formValue.email,
@@ -42,13 +43,14 @@ const Cart = () => {
       total: cart.reduce((acc, curr) => acc + curr.price * curr.quantity , 0)
     })
     .then((response) => {
-      console.log(response.id)
+
       swal({text: `Orden con ID ${response.id} ha sido creada con éxito.`, icon:"success"})
       updateStock(db)
       clear()
       event.preventDefault(navigate('/'))
     })
     .catch((error) => console.log(error))
+    }
   }
 
   const updateStock = (db) => {
